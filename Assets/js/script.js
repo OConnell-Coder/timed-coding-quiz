@@ -1,9 +1,18 @@
 var timeDisplay = document.getElementById('time-left');
-var startButton = document.getElementById('start-button');
+var startBtn = document.getElementById('start-button');
+var banner = document.querySelector('main');
 var timer;
-var timerCount = 5;
+var timerCount = 60;
+var qI = 0;
+var score = 0;
 
-startButton.addEventListener("click", startGame);
+// var theQuestion = document.getElementById('question-text');
+// var optA = document.getElementById('optA');
+// var optB = document.getElementById('optB');
+// var optC = document.getElementById('optC');
+// var optD = document.getElementById('optD');
+
+startBtn.addEventListener("click", startGame);
 
 function startGame() {
 
@@ -11,7 +20,7 @@ function startGame() {
       timeDisplay.textContent = timerCount + " seconds left until game over!";
       timerCount--;
   
-      if(timerCount === -1) {
+      if(timerCount < 1) {
        endGame();
       }
   
@@ -27,5 +36,28 @@ function endGame() {
 }
 
 function handleQuestions() {
-    //code here
+  let { q, a, c } = questions[qI];
+  banner.innerHTML = `<h1>${q}</h1><div id="answers"></div>`
+
+  a.forEach(ans => {
+    answers.innerHTML += `<button onclick="handleAnswers('${ans}')">${ans}</button>`;
+  });
+
 }
+
+function handleAnswers(ans) {
+  console.log(ans, questions[qI].c);
+
+  if (ans == questions[qI].c) {
+    score += 20;
+  } else {
+    timerCount -= 5;
+  };
+
+  qI++;
+
+  handleQuestions();
+}
+
+// Questions to be asked
+
