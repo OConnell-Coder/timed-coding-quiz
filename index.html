@@ -4,14 +4,44 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="resetsheet" href="/Assets/css/reset.css">
- <link rel="stylesheet" href="/Assets/css/style.css">
- <title></title>
+ <link rel="resetsheet" href="./Assets/css/reset.css">
+ <link rel="stylesheet" href="./Assets/css/style.css">
+ <title>Coding Quiz Game</title>
 </head>
  
 <body>
-  <h1></h1>
+<header>
+  <h1>Coding Quiz!</h1>
+  <h2>Do you have what it takes? 🧐</h2>
+  <button id="start-button">Start Game</button>
+  <h3 id="time-left"></h3>
+</header>
+<main>
+  <div id="quiz-box">
+    <div id="question-text">
+      <p></p>
+    </div>
+    <div id="options-list">
+      <ul>
+        <li><button class="option" id="optA">A. </button></li>
+        <li><button class="option" id="optB">B. </button></li>
+        <li><button class="option" id="optC">C. </button></li>
+        <li><button class="option" id="optD">D. </button></li>
+      </ul>
+    </div>
+    <div id="navigation-section">
+      <button class="nav-btn" id="evaluate-btn">Evaluate</button>
+      <button class="nav-btn" id="next-btn">Next</button>
+    </div>
+  </div>
+</main>
+<aside>
+  <h4>Leader Board 🏆</h4>
+  <ul>
+    <!-- list items go here -->
+  </ul>
+</aside>
  
- <script src="/Assets/js/script.js"></script>
+ <script src="./Assets/js/script.js"></script>
 </body>
 </html>

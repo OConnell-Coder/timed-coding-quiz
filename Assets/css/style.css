@@ -1,0 +1,45 @@
+* {
+    background-color: #8a9a58;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+aside {
+    float: right;
+    padding: 2%;
+}
+
+#start-button,
+.option,
+.nav-btn {
+    background-color: turquoise;
+}
+
+#start-button:hover,
+.option:hover,
+.nav-btn:hover {
+    background-color: teal;
+    color: whitesmoke;
+}
+
+#start-button:active,
+.option:active,
+.nav-btn:active {
+    background-color: teal;
+    color: whitesmoke;
+    box-shadow: inset;
+}
+
+#start-button:focus,
+.option:focus,
+.nav-btn:focus {
+    background-color: teal;
+    color: whitesmoke;
+}
