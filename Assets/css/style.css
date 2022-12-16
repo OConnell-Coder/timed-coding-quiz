@@ -2,9 +2,40 @@
     background-color: #8a9a58;
 }
 
-body {
+/* body {
     width: 100vw;
     height: 100vh;
+} */
+
+main {
+    margin: 20vh;    
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 60vh;
+    text-align: center;
+}
+
+#answers {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#answers button {
+    margin: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+#quiz-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 ul {
@@ -16,22 +47,33 @@ aside {
     padding: 2%;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    padding-top: 25%;
+    padding-bottom: 1%;
+}
+
 #start-button,
 .option,
-.nav-btn {
+.nav-btn,
+#high-scores-button {
     background-color: turquoise;
 }
 
 #start-button:hover,
 .option:hover,
-.nav-btn:hover {
+.nav-btn:hover,
+#high-scores-button:hover {
     background-color: teal;
     color: whitesmoke;
 }
 
 #start-button:active,
 .option:active,
-.nav-btn:active {
+.nav-btn:active,
+#high-scores-button:active {
     background-color: teal;
     color: whitesmoke;
     box-shadow: inset;
@@ -39,7 +81,8 @@ aside {
 
 #start-button:focus,
 .option:focus,
-.nav-btn:focus {
+.nav-btn:focus,
+#high-scores-button:focus {
     background-color: teal;
     color: whitesmoke;
 }
