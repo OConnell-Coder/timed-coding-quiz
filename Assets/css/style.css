@@ -2,17 +2,17 @@
     background-color: #8a9a58;
 }
 
-/* body {
-    width: 100vw;
-    height: 100vh;
-} */
-
 main {
     margin: 20vh;    
     border: 2px solid black;
     border-radius: 8px;
     height: 60vh;
     text-align: center;
+}
+
+aside {
+    display: flex;
+    justify-content: flex-start;
 }
 
 #answers {
@@ -24,6 +24,23 @@ main {
 
 #answers button {
     margin: 5px;
+    background-color: turquoise;
+}
+
+#answers button:hover {
+    background-color: teal;
+    color: whitesmoke;
+}
+
+#answers button:active {
+    background-color: teal;
+    color: whitesmoke;
+    box-shadow: inset;
+}
+
+#answers button:focus {
+    background-color: teal;
+    color: whitesmoke;
 }
 
 header {
@@ -58,14 +75,14 @@ footer {
 #start-button,
 .option,
 .nav-btn,
-#high-scores-button {
+#high-scores-btn {
     background-color: turquoise;
 }
 
 #start-button:hover,
 .option:hover,
 .nav-btn:hover,
-#high-scores-button:hover {
+#high-scores-btn:hover {
     background-color: teal;
     color: whitesmoke;
 }
@@ -73,7 +90,7 @@ footer {
 #start-button:active,
 .option:active,
 .nav-btn:active,
-#high-scores-button:active {
+#high-scores-btn:active {
     background-color: teal;
     color: whitesmoke;
     box-shadow: inset;
@@ -82,7 +99,7 @@ footer {
 #start-button:focus,
 .option:focus,
 .nav-btn:focus,
-#high-scores-button:focus {
+#high-scores-btn:focus {
     background-color: teal;
     color: whitesmoke;
 }

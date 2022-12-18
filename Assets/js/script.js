@@ -1,18 +1,19 @@
 var timeDisplay = document.getElementById('time-left');
 var startBtn = document.getElementById('start-button');
 var banner = document.querySelector('main');
+var scoresBtn = document.getElementById('high-scores-btn');
+var highScoresList = document.getElementById('score-board');
 var timer;
-var timerCount = 60;
+var timerCount = 150;
 var qI = 0;
 var score = 0;
-
-// var theQuestion = document.getElementById('question-text');
-// var optA = document.getElementById('optA');
-// var optB = document.getElementById('optB');
-// var optC = document.getElementById('optC');
-// var optD = document.getElementById('optD');
+var qsAnswered = 0;
+var scoreBoard = [];
+var playerScore;
 
 startBtn.addEventListener("click", startGame);
+
+scoresBtn.addEventListener("click", displayScores);
 
 function startGame() {
 
@@ -29,35 +30,60 @@ function startGame() {
     handleQuestions();
   }
 
-function endGame() {
-    clearInterval(timer);
-    timeDisplay.textContent = "Game Over!";
-    // console.log("Game Over!");
-}
-
 function handleQuestions() {
   let { q, a, c } = questions[qI];
+
   banner.innerHTML = `<h1>${q}</h1><div id="answers"></div>`
 
   a.forEach(ans => {
     answers.innerHTML += `<button onclick="handleAnswers('${ans}')">${ans}</button>`;
   });
-
 }
 
 function handleAnswers(ans) {
-  console.log(ans, questions[qI].c);
+  // console.log(ans, questions[qI].c);
 
   if (ans == questions[qI].c) {
     score += 20;
   } else {
-    timerCount -= 5;
+    timerCount -= 15;
   };
 
   qI++;
 
-  handleQuestions();
+  qsAnswered++;
+
+  // console.log(qsAnswered);
+
+  if (qsAnswered > questions.length -1) {
+    endGame();
+  } else {
+    handleQuestions(); 
+  }
+
 }
 
-// Questions to be asked
+function endGame() {
+  clearInterval(timer);
+  timeDisplay.textContent = "Game Over!";
+  // console.log("Game Over!");
+  var initials = prompt("Game Over! Score: " + score + "/100. Enter your initials to save your score to the score board.");
 
+  playerScore = {
+    theirScore: score,
+    Player: initials
+  };
+
+  scoreBoard.push(playerScore);
+
+  localStorage.setItem("high-scores", JSON.stringify(scoreBoard));
+  
+}
+
+function displayScores() {
+  var storedHighScores = localStorage.getItem("high-scores");
+
+  highScoresList.textContent = storedHighScores;
+
+  // highScoresList.textContent = playerScore.theirScore + " - " + playerScore.Player;
+}
