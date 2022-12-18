@@ -8,17 +8,16 @@ var timerCount = 150;
 var qI = 0;
 var score = 0;
 var qsAnswered = 0;
-var scoreBoard = [];
 var playerScore;
+var scoreBoard = [];
 
 startBtn.addEventListener("click", startGame);
 
-scoresBtn.addEventListener("click", displayScores);
+// scoresBtn.addEventListener("click", displayScores);
 
 function startGame() {
-
     timer = setInterval(function() {
-      timeDisplay.textContent = timerCount + " seconds left until game over!";
+      timeDisplay.textContent = timerCount + " seconds";
       timerCount--;
   
       if(timerCount < 1) {
@@ -28,9 +27,10 @@ function startGame() {
     }, 1000);
 
     handleQuestions();
-  }
+}
 
 function handleQuestions() {
+
   let { q, a, c } = questions[qI];
 
   banner.innerHTML = `<h1>${q}</h1><div id="answers"></div>`
@@ -63,27 +63,41 @@ function handleAnswers(ans) {
 
 }
 
+function compareNumbers(a, b) {
+  return a - b;
+}
+
 function endGame() {
   clearInterval(timer);
   timeDisplay.textContent = "Game Over!";
   // console.log("Game Over!");
-  var initials = prompt("Game Over! Score: " + score + "/100. Enter your initials to save your score to the score board.");
+
+  timerCount = 150;
+
+  var initials = prompt("Score: " + score + "/100. Enter your initials to save your score to the score board.");
 
   playerScore = {
-    theirScore: score,
-    Player: initials
+    playerName: initials,
+    theirScore: score
   };
 
   scoreBoard.push(playerScore);
 
-  localStorage.setItem("high-scores", JSON.stringify(scoreBoard));
-  
+  var sortedBoard = scoreBoard.sort(compareNumbers);
+
+  localStorage.setItem("high-scores", JSON.stringify(sortedBoard));
+
+  highScoresList.replaceChildren();
+
+  for (var i = 0; i < sortedBoard.length; i++ ) {
+    var listItem = document.createElement("p");
+    highScoresList.appendChild(listItem);
+    listItem.textContent = sortedBoard[i].playerName + " - " + sortedBoard[i].theirScore;
+  }
 }
 
-function displayScores() {
-  var storedHighScores = localStorage.getItem("high-scores");
+// function displayScores() {
 
-  highScoresList.textContent = storedHighScores;
+// }
 
-  // highScoresList.textContent = playerScore.theirScore + " - " + playerScore.Player;
-}
+
