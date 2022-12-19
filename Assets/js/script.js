@@ -13,14 +13,12 @@ var scoreBoard = [];
 
 startBtn.addEventListener("click", startGame);
 
-// scoresBtn.addEventListener("click", displayScores);
-
 function startGame() {
     timer = setInterval(function() {
-      timeDisplay.textContent = timerCount + " seconds";
+      timeDisplay.textContent = " = " + timerCount + " seconds";
       timerCount--;
   
-      if(timerCount < 1) {
+      if(timerCount === 0) {
        endGame();
       }
   
@@ -76,6 +74,10 @@ function endGame() {
 
   var initials = prompt("Score: " + score + "/100. Enter your initials to save your score to the score board.");
 
+  if (initials === null) {
+    return;
+  }
+
   playerScore = {
     playerName: initials,
     theirScore: score
@@ -94,10 +96,15 @@ function endGame() {
     highScoresList.appendChild(listItem);
     listItem.textContent = sortedBoard[i].playerName + " - " + sortedBoard[i].theirScore;
   }
+
+  banner.textContent = " ";
+  banner.innerHTML += `<button onclick="startGame()" id="play-again-btn">Play Again</button>`;
+
+  timerCount = 150;
+  qI = 0;
+  score = 0;
+  qsAnswered = 0;
 }
 
-// function displayScores() {
-
-// }
 
 
