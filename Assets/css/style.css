@@ -1,5 +1,24 @@
 * {
     background-color: #8a9a58;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1%;
+    font-size: 30px;
 }
 
 main {
@@ -10,9 +29,66 @@ main {
     text-align: center;
 }
 
-aside {
+p {
+    font-size: 20px;
+    margin: 20px;
+}
+
+#quiz-box {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+ul {
+    list-style: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    padding-top: 25%;
+    padding-bottom: 1%;
+}
+
+#start-button,
+.option,
+.nav-btn,
+#high-scores-btn,
+#play-again-btn {
+    background-color: turquoise;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+#start-button:hover,
+.option:hover,
+.nav-btn:hover,
+#high-scores-btn:hover,
+#play-again-btn:hover {
+    background-color: teal;
+    color: whitesmoke;
+}
+
+#start-button:active,
+.option:active,
+.nav-btn:active,
+#high-scores-btn:active,
+#play-again-btn:active {
+    background-color: teal;
+    color: whitesmoke;
+    box-shadow: inset;
+}
+
+#start-button:focus,
+.option:focus,
+.nav-btn:focus,
+#high-scores-btn:focus,
+#play-again-btn:focus {
+    background-color: teal;
+    color: whitesmoke;
 }
 
 #answers {
@@ -20,11 +96,14 @@ aside {
     flex-direction: column;
     width: 60%;
     margin: 0 auto;
+    font-size: 20px;
 }
 
 #answers button {
-    margin: 5px;
+    margin: 1%;
     background-color: turquoise;
+    border-radius: 5px;
+    font-size: 30px;
 }
 
 #answers button:hover {
@@ -39,67 +118,6 @@ aside {
 }
 
 #answers button:focus {
-    background-color: teal;
-    color: whitesmoke;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-}
-
-#quiz-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-ul {
-    list-style: none;
-}
-
-aside {
-    float: right;
-    padding: 2%;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    align-items:flex-end;
-    padding-top: 25%;
-    padding-bottom: 1%;
-}
-
-#start-button,
-.option,
-.nav-btn,
-#high-scores-btn {
-    background-color: turquoise;
-}
-
-#start-button:hover,
-.option:hover,
-.nav-btn:hover,
-#high-scores-btn:hover {
-    background-color: teal;
-    color: whitesmoke;
-}
-
-#start-button:active,
-.option:active,
-.nav-btn:active,
-#high-scores-btn:active {
-    background-color: teal;
-    color: whitesmoke;
-    box-shadow: inset;
-}
-
-#start-button:focus,
-.option:focus,
-.nav-btn:focus,
-#high-scores-btn:focus {
     background-color: teal;
     color: whitesmoke;
 }

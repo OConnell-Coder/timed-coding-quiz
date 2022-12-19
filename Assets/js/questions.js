@@ -4,8 +4,8 @@ const questions = [
     a: [
       "A programming language that primarily handles style and design.",
       "An art & calligraphy style that uses coffee as ink.",
-       "A programming language that creates logic and allows user interaction.",
-        "A jQuery method that makes writing code simple.",
+      "A programming language that creates logic and allows user interaction.",
+      "A jQuery method that makes writing code simple.",
     ],
     c: "A programming language that creates logic and allows user interaction."
   },
@@ -22,7 +22,7 @@ const questions = [
   {
     q: "If we were using building a house as a metaphor for programming languages, what would HTML do?",
     a: [
-        "Allow the house to facilitate certain functions (like the oven or the sink)",
+      "Allow the house to facilitate certain functions (like the oven or the sink)",
       "Style the house with paint, wallpaper, etc.",
       "Hardware, tools, metal, and linoleum",
       "Build the structure (like walls and floors)"
