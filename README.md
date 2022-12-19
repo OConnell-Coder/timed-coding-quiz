@@ -18,9 +18,11 @@ Features include a timer that decrements in time with wrong answers, a score boa
 
 ## Usage
 
-Website Link: 
+Website Link: https://oconnell-coder.github.io/timed-coding-quiz/
 
-GitHub Link: 
+GitHub Link: https://github.com/OConnell-Coder/timed-coding-quiz
 
-![alt text](assets/images/screenshot.png)
-
+![Screenshot 1](./Assets/images/screenshot-1.png)
+![Screenshot 2](./Assets/images/screenshot-2.png)
+![Screenshot 3](./Assets/images/screenshot-3.png)
+![Screenshot 4](./Assets/images/screenshot-4.png)
